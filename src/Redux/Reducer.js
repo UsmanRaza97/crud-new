@@ -1,7 +1,8 @@
 import {
   FETCH_USER_REQUEST,
   FETCH_USER_SUCCESS,
-  FETCH_USER_FAILURE
+  FETCH_USER_FAILURE,
+  DELETE_POST
 } from "./Constants"
 
 const initialState = {
@@ -28,6 +29,11 @@ const Reducer = (state = initialState, action) => {
         loading: false,
         users: [],
         error: action.payload
+      }
+    case DELETE_POST:
+      return {
+        ...state,
+        users: state.users.filter(post => post.id !== action.payload)
       }
     default:
       return state
