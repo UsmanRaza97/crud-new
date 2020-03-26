@@ -27,9 +27,7 @@ class PostForm extends Component {
       newPost: { title: "", body: "" }
     })
   }
-  componentDidMount() {
-    console.log("props of postform are", this.props)
-  }
+
   render() {
     return (
       <div>

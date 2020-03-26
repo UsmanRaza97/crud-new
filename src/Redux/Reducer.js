@@ -37,8 +37,6 @@ const Reducer = (state = initialState, action) => {
         users: state.users.filter(post => post.id !== action.payload)
       }
     case ADD_NEW_POST:
-      console.log("delete post Reducer", action.payload)
-
       return {
         ...state,
         users: state.users.concat([action.payload])
