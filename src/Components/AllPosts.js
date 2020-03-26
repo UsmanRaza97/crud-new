@@ -15,7 +15,7 @@ function AllPost({ fetchUsers, users }) {
       {users.map(user => (
         <Post post={user} id={user.id} key={user.id} />
       ))}
-      <button onClick={() => fetchUsers()}>hun kar</button>
+      <button onClick={() => fetchUsers()}>Get Posts</button>
     </div>
   )
 }

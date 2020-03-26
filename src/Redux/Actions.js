@@ -2,7 +2,8 @@ import {
   FETCH_USER_REQUEST,
   FETCH_USER_SUCCESS,
   FETCH_USER_FAILURE,
-  DELETE_POST
+  DELETE_POST,
+  ADD_NEW_POST
 } from "./Constants"
 import axios from "axios"
 
@@ -29,6 +30,12 @@ export const deletePost = id => {
   return {
     type: DELETE_POST,
     payload: id
+  }
+}
+export const addPost = post => {
+  return {
+    type: ADD_NEW_POST,
+    payload: post
   }
 }
 

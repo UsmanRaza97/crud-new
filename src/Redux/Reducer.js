@@ -2,7 +2,8 @@ import {
   FETCH_USER_REQUEST,
   FETCH_USER_SUCCESS,
   FETCH_USER_FAILURE,
-  DELETE_POST
+  DELETE_POST,
+  ADD_NEW_POST
 } from "./Constants"
 
 const initialState = {
@@ -34,6 +35,13 @@ const Reducer = (state = initialState, action) => {
       return {
         ...state,
         users: state.users.filter(post => post.id !== action.payload)
+      }
+    case ADD_NEW_POST:
+      console.log("delete post Reducer", action.payload)
+
+      return {
+        ...state,
+        users: state.users.concat([action.payload])
       }
     default:
       return state
