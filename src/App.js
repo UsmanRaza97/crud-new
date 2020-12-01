@@ -1,16 +1,16 @@
-import React from "react"
-import logo from "./logo.svg"
-import "./App.css"
-import AllPost from "./Components/AllPosts"
-import PostForm from "./Components/PostForm"
+import React from 'react';
+
+import './App.css';
+import AllPost from './Components/AllPosts';
+import Counter from './Components/counter';
+import PostForm from './Components/PostForm';
 
 function App() {
   return (
-    <div className="App">
-      <PostForm />
-      <AllPost />
+    <div className='App'>
+      <Counter />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,34 +1,35 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import { addPost } from "../Redux/Actions"
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addPost } from '../Redux/Actions';
 class PostForm extends Component {
   state = {
-    newPost: { title: "", body: "" }
-  }
+    newPost: { title: '', body: '' }
+  };
   handleChange = e => {
-    e.preventDefault()
-    const newPost = { ...this.state.newPost }
-    newPost.title = e.target.value
+    e.preventDefault();
+    const newPost = { ...this.state.newPost };
+    newPost.title = e.target.value;
     this.setState({
       newPost
-    })
-  }
+    });
+  };
   handText = e => {
-    const newPost = { ...this.state.newPost }
-    newPost.body = e.target.value
+    const newPost = { ...this.state.newPost };
+    newPost.body = e.target.value;
     this.setState({
       newPost
-    })
-  }
+    });
+  };
   handleSubmit = e => {
-    e.preventDefault()
-    this.props.addPost(this.state.newPost)
+    e.preventDefault();
+    this.props.addPost(this.state.newPost);
     this.setState({
-      newPost: { title: "", body: "" }
-    })
-  }
+      newPost: { title: '', body: '' }
+    });
+  };
 
   render() {
+    console.log('props of postform', this.props);
     return (
       <div>
         <h1>Create Post</h1>
@@ -36,34 +37,34 @@ class PostForm extends Component {
           <input
             value={this.state.newPost.title}
             onChange={this.handleChange}
-            type="text"
-            placeholder="Enter Post Title"
+            type='text'
+            placeholder='Enter Post Title'
           />
           <br />
           <br />
           <textarea
             value={this.state.newPost.body}
             onChange={this.handText}
-            rows="5"
-            cols="28"
-            placeholder="Enter Post"
+            rows='5'
+            cols='28'
+            placeholder='Enter Post'
           />
           <br />
           <br />
           <button>Post</button>
         </form>
       </div>
-    )
+    );
   }
 }
 const mapStateToProps = state => {
   return {
     state: state
-  }
-}
+  };
+};
 const mapDispatchToProps = dispatch => {
   return {
     addPost: newPost => dispatch(addPost(newPost))
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(PostForm)
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm);

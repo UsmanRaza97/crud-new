@@ -6,6 +6,19 @@
   height: 40vmin;
   pointer-events: none;
 }
+.mr10 {
+  margin-right: 10px;
+}
+.txt {
+  color: white;
+}
+.btn {
+  height: 40px;
+  width: 100px;
+  background-color: rebeccapurple;
+  text-decoration-color: aliceblue;
+  margin-top: 10px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
